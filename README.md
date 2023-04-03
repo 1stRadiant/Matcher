@@ -1,2 +1,52 @@
 # Matcher
-Generate regex from any string without using Ai.
+Generate regex from any string without using javascript and without using a language model, its just good old Js code.
+
+# How does it work
+
+Guide for using Matcher:
+
+Matcher was designed to help you easily generate regular expressions from a string, including custom commands. Here's how you can use it:
+
+Step 1: Define your string
+
+First, define the string that you want to turn into a regular expression. This string can contain any text, including custom commands in the format %commandName[commandValue]. For example:
+``const str = '%anyWord[My name is] John. [I am] [29] years old. [Email]: john@example.com. [The time is] %endsWith[13]:[24]';``
+
+Step 2: Call generateRegexFromString
+
+Call the generateRegexFromString function, passing in your string as a parameter. This will generate a regular expression based on your string.
+``const regex = generateRegexFromString(str);``
+
+Step 3: Use your regular expression
+
+Now that you have a regular expression, you can use it however you like. For example, you might use it to test if a given string matches the pattern you defined:
+``const myString = 'My name is John. I am 29 years old. Email: john@example.com. The time is 13:24';
+const isMatch = regex.test(myString);
+console.log(isMatch); // outputs: true``
+
+Or you might use it to search for specific matches within a larger string:
+
+``const myString = 'I have two email addresses: john@example.com and jane@example.com';
+const matches = myString.match(regex);
+console.log(matches); // outputs: ['john@example.com']``
+
+Step 4: Optional - Customize your commands
+
+If you want to customize the commands that generateRegexFromString supports, you can edit the commands object within the function. Each command should have a pattern property (which defines the regular expression pattern to use) and a replace function (which defines how to replace the matched string).
+
+For example, here's how you might add a new command called %myCommand:
+``const commands = {
+  // existing commands here...
+  myCommand: {
+    pattern: '\\d{3}',
+    replace: (part) => part,
+  },
+};``
+
+This command would match any three-digit number and keep it as-is without any replacement.
+
+Overall, the generateRegexFromString function is a powerful tool for creating regular expressions from strings, especially when you need to handle custom commands.
+
+
+
+
