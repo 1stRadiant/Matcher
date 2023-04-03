@@ -19,6 +19,9 @@ Call the generateRegexFromString function, passing in your string as a parameter
 
 ``const regex = generateRegexFromString(str);``
 
+This will generate something like:
+``/\w+My name is\ \w\w\w\w\.\ I am\? \d{2}\ \w\w\w\w\w\ \w\w\w\.\ Email\:\ \w\w\w\w\@\w\w\w\w\w\w\w\.\w\w\w\.\ The time is^\d{2}\:\d{2}/i``
+
 Step 3: Use your regular expression
 
 Now that you have a regular expression, you can use it however you like. For example, you might use it to test if a given string matches the pattern you defined:
