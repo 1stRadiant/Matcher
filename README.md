@@ -1,5 +1,5 @@
 # Matcher
-Generate regex from any string without using javascript and without using a language model, its just good old Js code.
+Generate regex from any string without using a language model, its just good old Javascript code.
 
 # How does it work
 
