@@ -11,7 +11,7 @@ Step 1: Define your string
 
 First, define the string that you want to turn into a regular expression. This string can contain any text, including custom commands in the format %commandName[commandValue]. For example:
 
-``const str = '%anyWord[My name is] John. [I am] [29] years old. [Email]: john@example.com. [The time is] %endsWith[13]:[24]';``
+``const str = '[Maker+ was made with [%anyWord]]. This text will be turned into regex. [However this won't!] if numbers are in brackets like this [34] they will be turn into regex as well. %endsWith[goodbye!]';``
 
 Step 2: Call generateRegexFromString
 
@@ -21,7 +21,7 @@ Call the generateRegexFromString function, passing in your string as a parameter
 
 This will generate something like:
 
-``/\w+My name is\ \w\w\w\w\.\ I am\ \d{2}\ \w\w\w\w\w\ \w\w\w\.\ Email\:\ \w\w\w\w\@\w\w\w\w\w\w\w\.\w\w\w\.\ The time is $\d{2}\:\d{2}/i``
+``/Maker\+ was made with \w+\.\ \w\w\w\w\ \w\w\w\w\ \w\w\w\w\ \w\w\ \w\w\w\w\w\w\ \w\w\w\w\ \w\w\w\w\w\.\ However this won't!\ \w\w\ \w\w\w\w\w\w\w\ \w\w\w\ \w\w\ \w\w\w\w\w\w\w\w\ \w\w\w\w\ \w\w\w\w\ \d{2}$ they will be turn into regex as well.goodbye!/i``
 
 Step 3: Use your regular expression
 
