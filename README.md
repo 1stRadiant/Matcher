@@ -27,15 +27,9 @@ Step 3: Use your regular expression
 
 Now that you have a regular expression, you can use it however you like. For example, you might use it to test if a given string matches the pattern you defined:
 
-``const myString = 'My name is John. I am 29 years old. Email: john@example.com. The time is 13:24';
+``const myString = 'Maker+ was made with OpenAI. GPT-3.5 architecture. However this won't! No idea what this means. Goodbye!';``
 const isMatch = regex.test(myString);
 console.log(isMatch); // outputs: true``
-
-Or you might use it to search for specific matches within a larger string:
-
-``const myString = 'I have two email addresses: john@example.com and jane@example.com';
-const matches = myString.match(regex);
-console.log(matches); // outputs: ['john@example.com']``
 
 Step 4: Optional - Customize your commands
 
