@@ -28,6 +28,7 @@ Step 3: Use your regular expression
 Now that you have a regular expression, you can use it however you like. For example, you might use it to test if a given string matches the pattern you defined:
 
 ``const myString = 'Maker+ was made with OpenAI. GPT-3.5 architecture. However this won't! No idea what this means. Goodbye!';``
+
 ``const isMatch = regex.test(myString);``
 ``console.log(isMatch); // outputs: true``
 
